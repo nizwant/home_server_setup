@@ -1,1 +1,33 @@
 # home_server_setup
+
+1. Connect device to keyboard and monitor
+2. Instal ubuntu server and configure it
+3. Check your network devices with `ip a` or `ip link`
+4. Configure network connection by creating DHCP config
+
+```
+ls /etc/netplan # if empty then
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+paste it there changing name of the network device
+```
+network:
+  version: 2
+  ethernets:
+    eno1:
+      dhcp4: true
+```
+5. Now you can unplug it and connect it to the ethernet, then turn it on
+6. In router dashboard check the IP of this new device
+7. Connect to it via ssh
+
+
+
+
+
+
+
+
+
+
