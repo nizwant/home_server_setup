@@ -5,9 +5,17 @@
 - samba server
 - tailwind
 - the arr stack
+  - qbit
+  - jackett
+  - flaresolverr
+  - sonarr
+  - radarr
+  - jellyfin
+  - jellyseerr
 - pi-hole
 - caddy
-- jellyfin
+- dozzle
+- librespeed
 
 ## Initial setup
 
