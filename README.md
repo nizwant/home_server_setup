@@ -1,5 +1,16 @@
 # home_server_setup
 
+## List of running services
+
+- samba server
+- tailwind
+- the arr stack
+- pi-hole
+- caddy
+- jellyfin
+
+## Initial setup
+
 1. Connect device to keyboard and monitor
 2. Instal ubuntu server and configure it
 3. Check your network devices with `ip a` or `ip link`
