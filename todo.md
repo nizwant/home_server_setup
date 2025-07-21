@@ -1,14 +1,15 @@
 ### ToDo list
 
-- [ ] unattended-upgrades turn on in startup script
-- [x] list of current services 
-- [ ] move docker compose files to this repo
-- [ ] clean those docker compose files 
-- [ ] make sambla work from inside docker
+- [x] list of current services
 - [x] move list of services I'm planning on using here to this repo
-- [ ] do a tailwind configuration from inside docker 
+- [ ] move docker compose files to this repo
+- [ ] unattended-upgrades turn on in startup script
+- [ ] clean those docker compose files 
+- [ ] make sambla work from inside docker - maybe not, just describe in a good way how to setup samba directly on server
+- [ ] do a tailwind configuration from inside docker - maybe not, just describe it good and do a startup on restart 
 - [ ] reaserch power usage optimisation script
 - [ ] download of my dot files config from my repo/ git config promp etc and implement them at the startup
+- [ ] reaserch what is username, servername, name etc. in linux setup
 
 ### Services I'm planning on using
 
