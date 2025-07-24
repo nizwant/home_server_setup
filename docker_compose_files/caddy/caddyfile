@@ -1,0 +1,63 @@
+{
+    email mateusznizwantowski@gmail.com
+    acme_dns duckdns {
+        api_token 35505b20-a4a2-4715-9581-31cab4951236
+    }
+}
+
+*.zandm.duckdns.org {
+    tls {
+        dns duckdns {
+            api_token 35505b20-a4a2-4715-9581-31cab4951236
+        }
+        resolvers 1.1.1.1 8.8.8.8
+	propagation_delay 120s
+    }
+
+    @pihole host pihole.zandm.duckdns.org
+    handle @pihole {
+	reverse_proxy 192.168.0.21:8880
+    }
+
+    @netflox host netflox.zandm.duckdns.org
+    handle @netflox {
+	reverse_proxy 192.168.0.21:8096
+    }
+
+    @speedtest host speedtest.zandm.duckdns.org
+    handle @speedtest {
+        reverse_proxy 192.168.0.21:8080
+    }
+
+    @dozzle host dozzle.zandm.duckdns.org
+    handle @dozzle {
+        reverse_proxy 192.168.0.21:8766
+    }
+
+    @sonarr host sonarr.zandm.duckdns.org
+    handle @sonarr {
+        reverse_proxy 192.168.0.21:8989
+    }
+
+    @radarr host radarr.zandm.duckdns.org
+    handle @radarr {
+        reverse_proxy 192.168.0.21:7878
+    }
+
+    @qbit host qbit.zandm.duckdns.org
+    handle @qbit {
+        reverse_proxy 192.168.0.21:2137
+    }
+
+    @jackett host jackett.zandm.duckdns.org
+    handle @jackett {
+        reverse_proxy 192.168.0.21:9117
+    }
+
+   handle {
+	respond "Unknown subdomain" 404
+   }
+
+
+}
+

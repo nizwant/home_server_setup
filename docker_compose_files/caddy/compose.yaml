@@ -1,0 +1,12 @@
+services:
+  caddy:
+    image: serfriz/caddy-duckdns
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./caddyfile:/etc/caddy/Caddyfile
+

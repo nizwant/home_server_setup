@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  librespeed:
+    image: ghcr.io/librespeed/speedtest:latest
+    container_name: librespeed
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      MODE: standalone
+      TITLE: "LibreSpeed"
