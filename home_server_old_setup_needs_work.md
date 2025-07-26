@@ -1,9 +1,10 @@
+# How to setup home server (old guide - first iteration)
 
-1. Download ubuntu desktop on machine 
+1. Download ubuntu desktop on machine
 2. figure out how to add ssh server (tricky) - next i will have to download ubuntu server (or even nix)
 3. connect from mac
 4. add ssh key with `ssh-copy-id`
-5. Download docker 
+5. Download docker
 6. configure jellyfin as in this guide [jellyfin config](https://pimylifeup.com/jellyfin-docker/)
 7. Turn of systemd dns with by editing the `/etc/systemd/resolved.conf`: `DNSStubListener=no` then restart with `service systemd-resolved restart`
 8. configure PiHole as in this guide [pihole git](https://github.com/pi-hole/docker-pi-hole?tab=readme-ov-file)

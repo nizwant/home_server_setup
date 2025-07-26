@@ -11,53 +11,27 @@
             api_token 35505b20-a4a2-4715-9581-31cab4951236
         }
         resolvers 1.1.1.1 8.8.8.8
-	propagation_delay 120s
+        propagation_delay 120s
     }
 
-    @pihole host pihole.zandm.duckdns.org
-    handle @pihole {
-	reverse_proxy 192.168.0.21:8880
+    @services host pihole.zandm.duckdns.org netflox.zandm.duckdns.org speedtest.zandm.duckdns.org dozzle.zandm.duckdns.org sonarr.zandm.duckdns.org radarr.zandm.duckdns.org qbit.zandm.duckdns.org jackett.zandm.duckdns.org
+    handle @services {
+        reverse_proxy {
+            map {host} {
+                pihole.zandm.duckdns.org    192.168.0.21:8880
+                netflox.zandm.duckdns.org   192.168.0.21:8096
+                speedtest.zandm.duckdns.org 192.168.0.21:8080
+                dozzle.zandm.duckdns.org    192.168.0.21:8766
+                sonarr.zandm.duckdns.org    192.168.0.21:8989
+                radarr.zandm.duckdns.org    192.168.0.21:7878
+                qbit.zandm.duckdns.org      192.168.0.21:2137
+                jackett.zandm.duckdns.org   192.168.0.21:9117
+            }
+            to {map}
+        }
     }
 
-    @netflox host netflox.zandm.duckdns.org
-    handle @netflox {
-	reverse_proxy 192.168.0.21:8096
+    handle {
+        respond "Unknown subdomain" 404
     }
-
-    @speedtest host speedtest.zandm.duckdns.org
-    handle @speedtest {
-        reverse_proxy 192.168.0.21:8080
-    }
-
-    @dozzle host dozzle.zandm.duckdns.org
-    handle @dozzle {
-        reverse_proxy 192.168.0.21:8766
-    }
-
-    @sonarr host sonarr.zandm.duckdns.org
-    handle @sonarr {
-        reverse_proxy 192.168.0.21:8989
-    }
-
-    @radarr host radarr.zandm.duckdns.org
-    handle @radarr {
-        reverse_proxy 192.168.0.21:7878
-    }
-
-    @qbit host qbit.zandm.duckdns.org
-    handle @qbit {
-        reverse_proxy 192.168.0.21:2137
-    }
-
-    @jackett host jackett.zandm.duckdns.org
-    handle @jackett {
-        reverse_proxy 192.168.0.21:9117
-    }
-
-   handle {
-	respond "Unknown subdomain" 404
-   }
-
-
 }
-
