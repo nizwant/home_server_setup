@@ -1,4 +1,4 @@
-# home_server_setup
+# Home Server configuration
 
 This is repository that contains setup for my home server, goal it to easily reproduce current setup and store in
 one place knowledge about it's state.

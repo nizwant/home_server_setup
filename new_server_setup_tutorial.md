@@ -1,4 +1,4 @@
-# Initial setup tutorial
+# New machine configuration
 
 1. Connect device to keyboard and monitor
 2. Instal ubuntu server and configure it
@@ -29,4 +29,4 @@
     git clone https://github.com/nizwant/home_server_setup.git
     ```
 
-9. Run startup script, it downloads and setups docker and downloads any updates
+9. Run `startup_script.sh` - it downloads and setups docker and downloads any updates
