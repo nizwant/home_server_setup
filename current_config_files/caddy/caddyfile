@@ -12,33 +12,25 @@
         propagation_delay 120s
     }
 
-    @services host 
-        pihole.zandm.duckdns.org
-        netflox.zandm.duckdns.org
-        speedtest.zandm.duckdns.org
-        dozzle.zandm.duckdns.org
-        sonarr.zandm.duckdns.org
-        radarr.zandm.duckdns.org
-        qbit.zandm.duckdns.org
-        jackett.zandm.duckdns.org
-
-    handle @services {
-        reverse_proxy {
-            map {host} {
-                pihole.zandm.duckdns.org    192.168.0.21:8880
-                netflox.zandm.duckdns.org   192.168.0.21:8096
-                speedtest.zandm.duckdns.org 192.168.0.21:8080
-                dozzle.zandm.duckdns.org    192.168.0.21:8766
-                sonarr.zandm.duckdns.org    192.168.0.21:8989
-                radarr.zandm.duckdns.org    192.168.0.21:7878
-                qbit.zandm.duckdns.org      192.168.0.21:2137
-                jackett.zandm.duckdns.org   192.168.0.21:9117
-            }
-            to {map}
-        }
+    map {host} {
+        pihole.zandm.duckdns.org    192.168.0.21:8880
+        netflox.zandm.duckdns.org   192.168.0.21:8096
+        speedtest.zandm.duckdns.org 192.168.0.21:8080
+        dozzle.zandm.duckdns.org    192.168.0.21:8766
+        sonarr.zandm.duckdns.org    192.168.0.21:8989
+        radarr.zandm.duckdns.org    192.168.0.21:7878
+        qbit.zandm.duckdns.org      192.168.0.21:2137
+        jackett.zandm.duckdns.org   192.168.0.21:9117
     }
 
     handle {
-        respond "Unknown subdomain" 404
+        @known host {map}
+        handle @known {
+            reverse_proxy {map}
+        }
+
+        handle {
+            respond "Unknown subdomain" 404
+        }
     }
 }
