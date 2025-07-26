@@ -7,14 +7,21 @@
 
 *.zandm.duckdns.org {
     tls {
-        dns duckdns {
-            api_token 35505b20-a4a2-4715-9581-31cab4951236
-        }
+        dns duckdns
         resolvers 1.1.1.1 8.8.8.8
         propagation_delay 120s
     }
 
-    @services host pihole.zandm.duckdns.org netflox.zandm.duckdns.org speedtest.zandm.duckdns.org dozzle.zandm.duckdns.org sonarr.zandm.duckdns.org radarr.zandm.duckdns.org qbit.zandm.duckdns.org jackett.zandm.duckdns.org
+    @services host 
+        pihole.zandm.duckdns.org
+        netflox.zandm.duckdns.org
+        speedtest.zandm.duckdns.org
+        dozzle.zandm.duckdns.org
+        sonarr.zandm.duckdns.org
+        radarr.zandm.duckdns.org
+        qbit.zandm.duckdns.org
+        jackett.zandm.duckdns.org
+
     handle @services {
         reverse_proxy {
             map {host} {
