@@ -1,51 +1,42 @@
 # home_server_setup
 
-## List of running services
+This is repository that contains setup for my home server, goal it to easily reproduce current setup and store in
+one place knowledge about it's state.
+
+## ToDo list
+
+- [ ] unattended-upgrades turn on in startup script
+- [ ] clean docker compose files that are used right now on server
+- [ ] test if new caddy config is working
+- [ ] make samba work from inside docker - maybe not, just describe in a good way how to setup samba directly on server
+- [ ] do a tailwind configuration from inside docker - maybe not, just describe it good and do a startup on restart
+- [ ] research power usage optimization script
+- [ ] download of my dot files config from my repo/ git config prompt etc and implement them at the startup
+- [ ] research what is username, servername, name etc. in linux setup
+- [ ] try to modify fan behavior - enable in bios
+
+## List of currently running services
 
 - samba server
 - tailwind
-- the arr stack
-  - qbit
-  - jackett
-  - flaresolverr
-  - sonarr
-  - radarr
-  - jellyfin
-  - jellyseerr
 - pi-hole
 - caddy
 - dozzle
 - librespeed
+- the arr stack
+  - qbit
+  - jackett
+  - sonarr
+  - radarr
+  - jellyfin
 
-## Initial setup
+## Services and functionalities I'm planning on implementing
 
-1. Connect device to keyboard and monitor
-2. Instal ubuntu server and configure it
-3. Check your network devices with `ip a` or `ip link`
-4. Configure network connection by creating DHCP config
-
-    ```bash
-    ls /etc/netplan # if empty then
-    sudo nano /etc/netplan/01-netcfg.yaml
-    ```
-
-    paste it there changing name of the network device
-
-    ```yaml
-    network:
-      version: 2
-      ethernets:
-        eno1:
-          dhcp4: true
-    ```
-  
-5. Now you can unplug it and connect it to the ethernet, then turn it on
-6. In router dashboard check the IP of this new device
-7. Connect to it via ssh
-8. Clone this repo
-
-    ```bash
-    git clone https://github.com/nizwant/home_server_setup.git
-    ```
-
-9. Run startup script, it downloads and setups docker and downloads any updates
+- mature observability stack - grafana, prometheus
+- backup of mobile to samba?
+- samba in completed torrent downlands folder
+- vaultwarden / bitwarden
+- nextcloud
+- bazarr
+- flaresolverr
+- jellyseerr
